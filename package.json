@@ -1,0 +1,12 @@
+{
+  "name": "serverless-node-starter",
+  "version": "1.0.0",
+  "description": "Minimalist Serverless starter",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
+}

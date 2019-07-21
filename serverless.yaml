@@ -1,0 +1,28 @@
+service: serverless-starter-node-aws
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-west-2'}
+  profile: ${opt:profile, 'dev'}
+
+  environment:
+    REGION: ${self:provider.region}
+
+  # Describe necessary IAM permissions here
+  # iamRoleStatements:
+  #   - Effect: Allow
+  #     Action:
+  #       - dynamodb:*
+  #     Resource: "arn:aws:dynamodb:${self:provider.region}:*:*"
+
+functions:
+  lambdaHandler:
+    handler: handlers.lambdaHandler 
+  helloWolf:
+    handler: handlers.getHello
+    events:
+      - http:
+          path: /
+          method: get
